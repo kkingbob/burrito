@@ -1,0 +1,20 @@
+{% extends 'main.html' %}
+
+
+
+{% block content %}
+<!-- List all posts in timely order -->
+<h1>Home</h1>
+
+<div>
+    <div>
+        {% for post in posts %}
+            <div>
+                <!-- url to set link as post name -->
+                <h5> {{post.id}} -- <a href="{% url 'post' post.id %}">{{post.title}}</a> </h5>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock content %}
